@@ -8,7 +8,7 @@ gi.require_version("Adw", "1")
 
 from gi.repository import Gtk, Adw
 
-class MainWindow(Gtk.ApplicationWindow):
+class LemonadeWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -28,7 +28,7 @@ class Lemonade(Adw.Application):
         self.connect('activate', self.on_activate)
 
     def on_activate(self, app):
-        self.win = MainWindow(application=app)
+        self.win = LemonadeWindow(application=app)
         self.win.present()
 
 app = Lemonade(application_id="ml.mdwalters.Lemonade")
