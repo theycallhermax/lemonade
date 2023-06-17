@@ -12,17 +12,35 @@ class LemonadeWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        stack = Gtk.Stack()
+        stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
+        stack.set_transition_duration(1000)
+
         self.headerbar = Gtk.HeaderBar.new()
         self.set_titlebar(self.headerbar)
+
+        home_button = Gtk.Button()
+        home_button.connect("clicked", self.home)
+        stack.add_titled(home_button, "home", "Home")
+
+        # e_button = Gtk.Button()
+        # stack.add_titled(e_button, "e", "e")
+
+        stack_switcher = Gtk.StackSwitcher()
+        stack_switcher.set_stack(stack)
 
         self.refresh_button = Gtk.Button.new_from_icon_name("view-refresh")
         self.refresh_button.connect("clicked", self.refresh)
         self.refresh_button.set_tooltip_text("Refresh")
+        self.headerbar.set_title_widget(stack_switcher)
         self.headerbar.pack_start(self.refresh_button)
 
-        self.set_default_size(400, 500)
+        self.set_default_size(700, 500)
         self.set_title("Lemonade")
 
+        self.home()
+
+    def home(self):
         self.sw = Gtk.ScrolledWindow()
         self.sw.set_hexpand(False)
         self.sw.set_vexpand(True)
@@ -41,14 +59,19 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         self.refresh()
 
     def refresh(self, *args):
-        self.list = requests.get("https://lemmy.ml/api/v3/community/list?sort=Hot").json()
+        self.list = requests.get("https://pawb.social/api/v3/community/list?sort=Hot").json()
         for post in self.list["communities"]:
             box = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 0)
             self.listbox.append(box)
 
             label = Gtk.Label.new()
-            label.set_markup(f"""{post["community"]["title"]}
+
+            if post["community"]["description"] == None:
+                label.set_markup(f"""{post["community"]["title"]}""")
+            else:
+                label.set_markup(f"""{post["community"]["title"]}
 <small>{post["community"]["description"]}</small>""")
+
             label.props.margin_start = 5
             label.props.hexpand = True
             label.props.wrap = True
