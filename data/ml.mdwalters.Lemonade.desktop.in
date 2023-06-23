@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Eight Ball
 Exec=eight-ball
-Icon=ml.mdwalters.EightBall
+Icon=ml.mdwalters.Lemonade
 Terminal=false
 Type=Application
 Categories=GTK;
