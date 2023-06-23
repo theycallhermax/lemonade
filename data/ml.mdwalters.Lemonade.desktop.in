@@ -1,9 +1,8 @@
 [Desktop Entry]
-Version=1.0
-Type=Application
-Name=Lemonade
-Comment=A Lemmy client written in Python, using GTK 4 and libadwaita
-Categories=Network;Chat;
-Icon=lemonade
-Exec=lemonade
+Name=Eight Ball
+Exec=eight-ball
+Icon=ml.mdwalters.EightBall
 Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

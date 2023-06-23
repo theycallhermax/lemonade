@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop-application">
-  <id>ml.mdwalters.Lemonade</id>
-  <name>Lemonade</name>
-  <summary>A Lemmy client written in Python, using GTK 4 and libadwaita</summary>
-  <metadata_license>CC-BY-SA-4.0</metadata_license>
-  <project_license>MIT</project_license>
-  <description>
-    <p>
-      Lemonade is a GTK 4 and libadwaita client for the federated Reddit alternative, Lemmy.
-    </p>
-  </description>
-  <launchable type="desktop-id">ml.mdwalters.Lemonade.desktop</launchable>
+<component type="desktop">
+    <id>ml.mdwalters.Lemonade</id>
+    <launchable type="desktop-id">ml.mdwalters.Lemonade.desktop</launchable>
+    <name>Lemonade</name>
+    <developer_name>M.D. Walters</developer_name>
+    <project_license>MIT</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+    <summary>A Lemmy client written in Python, using GTK 4 and libadwaita</summary>
+    <content_rating type="oars-1.1">
+        <content_attribute id="social-chat">moderate</content_attribute>
+        <content_attribute id="social-info">mild</content_attribute>
+    </content_rating>
+
+    <update_contact>mail@mdwalters.ml</update_contact>
+    <description>
+        <p>Lemonade is a client for the federated Reddit alternative, Lemmy.</p>
+    </description>
+    <url type="homepage">https://github.com/mdwalters/lemonade</url>
+    <url type="bugtracker">https://github.com/mdwalters/lemonade/issues</url>
+    <screenshots>
+        <screenshot type="default">
+            <image type="source">https://i.ibb.co/kJhGDLy/image.png</image>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="2023.06.23" date="2023-06-23">
+            <description>
+                <ul>
+                    <li>Fix the internal app data</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2023.06.22" date="2023-06-22">
+            <description>
+                <ul>
+                    <li>Redesigned GUI!</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2023.06.17" date="2023-06-17">
+            <description>
+                <ul>
+                    <li>First release!</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
 </component>
