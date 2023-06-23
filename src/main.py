@@ -59,7 +59,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         self.refresh()
 
     def refresh(self, *args):
-        self.list = requests.get("https://pawb.social/api/v3/community/list?sort=Hot").json()
+        self.list = requests.get("https://lemmy.ml/api/v3/community/list?sort=Hot").json()
         for post in self.list["communities"]:
             box = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 0)
             self.listbox.append(box)

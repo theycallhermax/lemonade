@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-	<id>ml.mdwalters.Lemonade.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>MIT</project_license>
-	<description>
-	  <p>No description</p>
-	</description>
+<component type="desktop-application">
+  <id>ml.mdwalters.Lemonade</id>
+  <name>Lemonade</name>
+  <summary>A Lemmy client written in Python, using GTK 4 and libadwaita</summary>
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>
+      Lemonade is a GTK 4 and libadwaita client for the federated Reddit alternative, Lemmy.
+    </p>
+  </description>
+  <launchable type="desktop-id">ml.mdwalters.Lemonade.desktop</launchable>
 </component>

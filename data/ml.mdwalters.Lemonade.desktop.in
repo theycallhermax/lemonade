@@ -1,8 +1,9 @@
 [Desktop Entry]
-Name=Lemonade
-Exec=lemonade
-Icon=ml.mdwalters.Lemonade
-Terminal=false
+Version=1.0
 Type=Application
-Categories=GTK;
-StartupNotify=true
+Name=Lemonade
+Comment=A Lemmy client written in Python, using GTK 4 and libadwaita
+Categories=Network;Chat;
+Icon=lemonade
+Exec=lemonade
+Terminal=false
