@@ -24,6 +24,15 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.06.24" date="2023-06-24">
+            <description>
+                <ul>
+                    <li>Bold text in community titles</li>
+                    <li>Community descriptions only show the first line only</li>
+                    <li>Lemonade != Eight Ball</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.06.23.1" date="2023-06-23">
             <description>
                 <ul>
