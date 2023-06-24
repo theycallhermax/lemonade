@@ -67,10 +67,11 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             label = Gtk.Label.new()
 
             if post["community"]["description"] == None:
-                label.set_markup(f"""{post["community"]["title"]}""")
+                label.set_markup(f"""<b>{post["community"]["title"]}</b>""")
             else:
-                label.set_markup(f"""{post["community"]["title"]}
-<small>{post["community"]["description"]}</small>""")
+                split = post["community"]["description"].split("\n")[0]
+                label.set_markup(f"""<b>{post["community"]["title"]}</b>
+<small>{split}</small>""")
 
             label.props.margin_start = 5
             label.props.hexpand = True
