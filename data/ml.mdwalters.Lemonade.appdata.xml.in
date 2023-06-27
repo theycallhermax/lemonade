@@ -24,6 +24,13 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.06.26" date="2023-06-26">
+            <description>
+                <ul>
+                    <li>Fix the descripton KeyError</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.06.24" date="2023-06-24">
             <description>
                 <ul>
