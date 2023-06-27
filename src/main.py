@@ -77,7 +77,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             label.props.hexpand = True
             label.props.wrap = True
             label.set_halign(Gtk.Align.START)
-            label.set_selectable(True)
+            label.set_selectable(False)
             box.append(label)
 
 class Lemonade(Adw.Application):
