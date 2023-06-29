@@ -3,3 +3,9 @@
   <h1>Lemonade</h1>
   A Lemmy client written in Python, using GTK 4 and libadwaita
 </div>
+ 
+## Installing
+You can install Lemonade from Flathub:
+```bash
+flatpak install flathub ml.mdwalters.Lemonade
+```
