@@ -24,6 +24,13 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.06.29" date="2023-06-29">
+            <description>
+                <ul>
+                    <li>Add support for devices running Phosh (thanks baarkerlounger!)</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.06.26" date="2023-06-26">
             <description>
                 <ul>

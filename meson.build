@@ -1,5 +1,5 @@
 project('lemonade',
-          version: '2023.06.26',
+          version: '2023.06.29',
     meson_version: '>= 0.62.0',
   default_options: [ 'warning_level=2', 'werror=false', ],
 )
