@@ -78,6 +78,11 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             label.props.wrap = True
             label.set_halign(Gtk.Align.START)
             label.set_selectable(False)
+
+            refresh_button = Gtk.Button.new_from_icon_name("network-wireless")
+            refresh_button.connect("clicked", self.refresh)
+            refresh_button.set_tooltip_text("Refresh")
+            box.append(refresh_button)
             box.append(label)
 
 class Lemonade(Adw.Application):
