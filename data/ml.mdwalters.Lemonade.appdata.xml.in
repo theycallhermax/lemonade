@@ -28,6 +28,7 @@
             <description>
                 <ul>
                     <li>Add support for devices running Phosh (thanks baarkerlounger!)</li>
+                    <li>Experimental open in browser button</li>
                 </ul>
             </description>
         </release>
