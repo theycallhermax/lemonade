@@ -2,5 +2,3 @@ data/ml.mdwalters.Lemonade.desktop.in
 data/ml.mdwalters.Lemonade.appdata.xml.in
 data/ml.mdwalters.Lemonade.gschema.xml
 src/main.py
-src/window.py
-src/window.ui
