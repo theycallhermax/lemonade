@@ -13,7 +13,7 @@ Lemonade is a sleek and modern Lemmy client that is designed to provide a seamle
 
 With Lemonade, you can easily browse your favorite communities, discover new content, and engage with other users. The client is optimized for speed and performance, ensuring that you can quickly and efficiently navigate through Lemmy without any lag or delays.
 ## Screenshots
-![Lemonade showing all of the top communities in the main Lemmy instance](https://github.com/mdwalters/lemonade/assets/67456566/d269db5f-b3c3-4011-8fc1-d315c9465d61)
+![Lemonade showing all of the top communities in the main Lemmy instance](https://i.ibb.co/0jf8RR4/image.png)
 ## Installing
 You can install Lemonade from Flathub:
 ```bash
