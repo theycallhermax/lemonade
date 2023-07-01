@@ -21,10 +21,17 @@
     <url type="bugtracker">https://github.com/mdwalters/lemonade/issues</url>
     <screenshots>
         <screenshot type="default">
-            <image type="source">https://i.ibb.co/x2dwZjZ/image.png</image>
+            <image type="source">https://i.ibb.co/8B3ZHww/image.png</image>
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.06.30" date="2023-06-30">
+            <description>
+                <ul>
+                    <li>Yet another redesign!</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.06.29" date="2023-06-29">
             <description>
                 <ul>

@@ -45,11 +45,18 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         self.sw.set_hexpand(False)
         self.sw.set_vexpand(True)
 
-        self.box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.box = Gtk.Box(
+            orientation=Gtk.Orientation.VERTICAL,
+            margin_top = 20,
+            margin_bottom = 20,
+            margin_start = 20,
+            margin_end = 20
+        )
         self.sw.set_child(self.box)
         self.set_child(self.sw)
 
         self.listbox = Gtk.ListBox.new()
+        self.listbox.get_style_context().add_class("boxed-list")
         self.listbox.props.hexpand = True
         self.listbox.props.vexpand = True
         self.listbox.set_selection_mode(Gtk.SelectionMode.NONE)
@@ -61,7 +68,13 @@ class LemonadeWindow(Gtk.ApplicationWindow):
     def refresh(self, *args):
         self.list = requests.get("https://lemmy.ml/api/v3/community/list?sort=Hot").json()
         for post in self.list["communities"]:
-            box = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 0)
+            box = Gtk.Box(
+                orientation=Gtk.Orientation.HORIZONTAL,
+                margin_top = 20,
+                margin_bottom = 20,
+                margin_start = 20,
+                margin_end = 20
+            )
             self.listbox.append(box)
 
             label = Gtk.Label.new()
@@ -79,10 +92,10 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             label.set_halign(Gtk.Align.START)
             label.set_selectable(False)
 
-            refresh_button = Gtk.Button.new_from_icon_name("network-wireless")
-            refresh_button.connect("clicked", self.refresh)
-            refresh_button.set_tooltip_text("Refresh")
-            box.append(refresh_button)
+            # refresh_button = Gtk.Button.new_from_icon_name("network-wireless")
+            # refresh_button.connect("clicked", self.refresh)
+            # refresh_button.set_tooltip_text("Refresh")
+            # box.append(refresh_button)
             box.append(label)
 
 class Lemonade(Adw.Application):
