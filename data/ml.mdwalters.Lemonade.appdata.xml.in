@@ -25,6 +25,13 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.07.01" date="2023-07-01">
+            <description>
+                <ul>
+                    <li>Add community icons</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.06.30" date="2023-06-30">
             <description>
                 <ul>
