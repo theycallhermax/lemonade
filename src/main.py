@@ -69,6 +69,9 @@ class LemonadeWindow(Gtk.ApplicationWindow):
     def refresh(self, *args):
         self.communities = requests.get("https://lemmy.ml/api/v3/community/list?sort=Hot").json()
         for community in self.communities["communities"]:
+            if community["community"]["nfsw"] == True or community["community"]["hidden"] == True:
+                continue
+
             box = Gtk.Box(
                 orientation=Gtk.Orientation.HORIZONTAL,
                 margin_top = 20,
