@@ -29,11 +29,11 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         stack_switcher = Gtk.StackSwitcher()
         stack_switcher.set_stack(stack)
 
-        self.refresh_button = Gtk.Button.new_from_icon_name("view-refresh")
-        self.refresh_button.connect("clicked", self.refresh)
-        self.refresh_button.set_tooltip_text("Refresh")
-        self.headerbar.set_title_widget(stack_switcher)
-        self.headerbar.pack_start(self.refresh_button)
+        # self.refresh_button = Gtk.Button.new_from_icon_name("view-refresh")
+        # self.refresh_button.connect("clicked", self.refresh)
+        # self.refresh_button.set_tooltip_text("Refresh")
+        # self.headerbar.set_title_widget(stack_switcher)
+        # self.headerbar.pack_start(self.refresh_button)
 
         self.set_default_size(700, 500)
         self.set_title("Lemonade")
