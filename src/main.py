@@ -2,11 +2,12 @@ import sys
 import gi
 import json
 import requests
+import urllib.request
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 
-from gi.repository import Gtk, Adw
+from gi.repository import Gtk, Adw, Gdk, Gio
 
 class LemonadeWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
@@ -66,8 +67,8 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         self.refresh()
 
     def refresh(self, *args):
-        self.list = requests.get("https://lemmy.ml/api/v3/community/list?sort=Hot").json()
-        for post in self.list["communities"]:
+        self.communities = requests.get("https://lemmy.ml/api/v3/community/list?sort=Hot").json()
+        for community in self.communities["communities"]:
             box = Gtk.Box(
                 orientation=Gtk.Orientation.HORIZONTAL,
                 margin_top = 20,
@@ -78,13 +79,24 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             self.listbox.append(box)
 
             label = Gtk.Label.new()
+            avatar = Adw.Avatar.new(40, community["community"]["title"], True)
 
-            if not "description" in post["community"]:
-                label.set_markup(f"""<big><b>{post["community"]["title"]}</b></big> <small>c/{post["community"]["name"]}</small>""")
+            if "icon" in community["community"]:
+                try:
+                    urllib.request.urlretrieve(community["community"]["icon"], ".comic.png")
+                except urllib.error.HTTPError as e:
+                    print(e)
+
+                avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path("./.comic.png")))
             else:
-                split = post["community"]["description"].split("\n")[0]
-                label.set_markup(f"""<big><b>{post["community"]["title"]}</b></big>  <small>c/{post["community"]["name"]}</small>
-<small>{split}</small>""")
+                pass
+
+            if not "description" in community["community"]:
+                label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big> <small>c/{community["community"]["name"]}</small>""")
+            else:
+                split = community["community"]["description"].split("\n")[0]
+                label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big>  <small>c/{community["community"]["name"]}</small>
+{split}""")
 
             label.props.margin_start = 5
             label.props.hexpand = True
@@ -96,6 +108,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             # refresh_button.connect("clicked", self.refresh)
             # refresh_button.set_tooltip_text("Refresh")
             # box.append(refresh_button)
+            box.append(avatar)
             box.append(label)
 
 class Lemonade(Adw.Application):
