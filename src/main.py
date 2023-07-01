@@ -69,9 +69,6 @@ class LemonadeWindow(Gtk.ApplicationWindow):
     def refresh(self, *args):
         self.communities = requests.get("https://lemmy.ml/api/v3/community/list?sort=Hot").json()
         for community in self.communities["communities"]:
-            if community["community"]["nfsw"] == True or community["community"]["hidden"] == True:
-                continue
-
             box = Gtk.Box(
                 orientation=Gtk.Orientation.HORIZONTAL,
                 margin_top = 20,
@@ -86,19 +83,20 @@ class LemonadeWindow(Gtk.ApplicationWindow):
 
             if "icon" in community["community"]:
                 try:
-                    urllib.request.urlretrieve(community["community"]["icon"], "tmp.png")
+                    name = community["community"]["name"]
+                    urllib.request.urlretrieve(community["community"]["icon"], f"{name}.png")
+                    avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path(f"./{name}.png")))
                 except urllib.error.HTTPError as e:
-                    print(e)
-
-                avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path("./tmp.png")))
+                    print(f"Error while downloading icon: {e}")
+                    pass
             else:
                 pass
 
             if not "description" in community["community"]:
-                label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big> <small>c/{community["community"]["name"]}</small>""")
+                label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big> <small>!{community["community"]["name"]}@{community["community"]["actor_id"].split("/")[2]}</small>""")
             else:
                 split = community["community"]["description"].split("\n")[0]
-                label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big>  <small>c/{community["community"]["name"]}</small>
+                label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big>  <small>!{community["community"]["name"]}@{community["community"]["actor_id"].split("/")[2]}</small>
 {split}""")
 
             label.props.margin_start = 5
