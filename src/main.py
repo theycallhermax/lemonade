@@ -83,11 +83,11 @@ class LemonadeWindow(Gtk.ApplicationWindow):
 
             if "icon" in community["community"]:
                 try:
-                    urllib.request.urlretrieve(community["community"]["icon"], ".comic.png")
+                    urllib.request.urlretrieve(community["community"]["icon"], "tmp.png")
                 except urllib.error.HTTPError as e:
                     print(e)
 
-                avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path("./.comic.png")))
+                avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path("./tmp.png")))
             else:
                 pass
 
