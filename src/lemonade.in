@@ -23,4 +23,4 @@ if __name__ == '__main__':
     resource._register()
 
     from lemonade import main
-    sys.exit(0) # main.main(VERSION)
+    sys.exit(main.main(VERSION))

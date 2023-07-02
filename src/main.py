@@ -3,6 +3,7 @@ import gi
 import json
 import requests
 import urllib.request
+import http
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
@@ -17,7 +18,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
         stack.set_transition_duration(1000)
 
-        self.headerbar = Gtk.HeaderBar.new()
+        self.headerbar = Adw.HeaderBar.new()
         self.set_titlebar(self.headerbar)
 
         home_button = Gtk.Button()
@@ -83,11 +84,10 @@ class LemonadeWindow(Gtk.ApplicationWindow):
 
             if "icon" in community["community"]:
                 try:
-                    name = community["community"]["name"]
-                    urllib.request.urlretrieve(community["community"]["icon"], f"/tmp/{name}.png")
-                    avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path(f"/tmp/{name}.png")))
-                except urllib.error.HTTPError as e:
-                    print(f"Error while downloading icon: {e}")
+                    name = community["community"]["icon"].split("/")[-1]
+                    urllib.request.urlretrieve(community["community"]["icon"], f"/tmp/{name}")
+                    avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path(f"/tmp/{name}")))
+                except:
                     pass
             else:
                 pass
@@ -121,6 +121,7 @@ class Lemonade(Adw.Application):
         self.win = LemonadeWindow(application=app)
         self.win.present()
 
-app = Lemonade(application_id="ml.mdwalters.Lemonade")
-app.run(sys.argv)
+def main(version):
+    app = Lemonade(application_id="ml.mdwalters.Lemonade")
+    app.run(sys.argv)
 
