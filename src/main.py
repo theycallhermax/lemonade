@@ -95,7 +95,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             if not "description" in community["community"]:
                 label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big> <small>!{community["community"]["name"]}@{community["community"]["actor_id"].split("/")[2]}</small>""")
             else:
-                split = community["community"]["description"].split("\n")[0]
+                split = community["community"]["description"].split("\n")[0].replace("&", "&amp;").replace("<", "&what;").replace(">", "&what;")
                 label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big>  <small>!{community["community"]["name"]}@{community["community"]["actor_id"].split("/")[2]}</small>
 {split}""")
 
