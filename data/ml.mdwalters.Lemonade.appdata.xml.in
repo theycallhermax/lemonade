@@ -25,6 +25,13 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.07.09" date="2023-07-09">
+            <description>
+                <ul>
+                    <li>Fix the app not opening</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.07.01" date="2023-07-01">
             <description>
                 <ul>
