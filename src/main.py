@@ -4,6 +4,7 @@ import json
 import requests
 import urllib.request
 import http
+import os
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
@@ -84,12 +85,15 @@ class LemonadeWindow(Gtk.ApplicationWindow):
 
             if "icon" in community["community"]:
                 try:
+                    print(f"Downloading icon for {community['community']['title']}")
                     name = community["community"]["icon"].split("/")[-1]
-                    urllib.request.urlretrieve(community["community"]["icon"], f"~/.cache/{name}")
-                    avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path(f"~/.cache/{name}")))
+                    urllib.request.urlretrieve(community["community"]["icon"], f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}/cache/{name}")
+                    avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path(f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}/cache/{name}")))
                 except:
+                    print(f"Error getting icon for {community['community']['title']}")
                     pass
             else:
+                print(f"No icon found for {community['community']['title']}, skipping")
                 pass
 
             if not "description" in community["community"]:
