@@ -172,7 +172,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         self.about.set_comments("Follow discussions on Lemmy")
         self.about.set_release_notes("""<ul>
             <li>Fix icons not loading</li>
-            <li>Use <code>Adw.Clamp</code> instead of <code>Gtk.Box</code></li>
+            <li>Uses <code>Adw.Clamp</code> instead of <code>Gtk.Box</code></li>
             <li>Add download success message to logs</li>
             <li>Added about window!</li>
         </ul>""")
