@@ -25,6 +25,16 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.07.14" date="2023-07-14">
+            <description>
+                <ul>
+                    <li>Fix icons not loading</li>
+                    <li>Uses <code>Adw.Clamp</code> instead of <code>Gtk.Box</code></li>
+                    <li>Add download success message to logs</li>
+                    <li>Added about window!</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.07.12" date="2023-07-12">
             <description>
                 <ul>

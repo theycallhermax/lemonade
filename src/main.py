@@ -15,7 +15,29 @@ class LemonadeWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        os.mkdir(os.path.join(f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}", "cache"))
+        MENU_XML = """
+            <?xml version="1.0" encoding="UTF-8"?>
+                <interface>
+                    <menu id="app-menu">
+                        <section>
+                            <item>
+                                <attribute name="action">win.about</attribute>
+                                <attribute name="label" translatable="yes">_About</attribute>
+                            </item>
+                            <item>
+                                <attribute name="action">win.quit</attribute>
+                                <attribute name="label" translatable="yes">_Quit</attribute>
+                                <attribute name="accel">&lt;Primary&gt;Q</attribute>
+                            </item>
+                        </section>
+                    </menu>
+                </interface>
+        """
+
+        try:
+            os.mkdir(os.path.join(f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}", "cache"))
+        except FileExistsError as e:
+            print(e)
 
         stack = Gtk.Stack()
         stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
@@ -39,6 +61,20 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         # self.refresh_button.set_tooltip_text("Refresh")
         self.headerbar.set_title_widget(stack_switcher)
         # self.headerbar.pack_start(self.refresh_button)
+
+        quit_action = Gio.SimpleAction.new("quit", None) # look at MENU_XML win.quit
+        quit_action.connect("activate", self.on_quit)
+        self.add_action(quit_action) # (self window) == win in MENU_XML
+
+        about_action = Gio.SimpleAction.new("about", None) # look at MENU_XML win.about
+        about_action.connect("activate", self.on_about)
+        self.add_action(about_action) # (self window) == win in MENU_XML
+
+        self.menu_button = Gtk.MenuButton.new()
+        self.headerbar.pack_end(self.menu_button) # or pack_start
+        menu = Gtk.Builder.new_from_string(MENU_XML, -1).get_object("app-menu")
+        self.menu_button.set_icon_name("open-menu-symbolic")
+        self.menu_button.set_menu_model(menu)
 
         self.set_default_size(700, 500)
         self.set_title("Lemonade")
@@ -120,6 +156,28 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             # box.append(refresh_button)
             box.append(avatar)
             box.append(label)
+    def on_quit(self, action, param=None):
+        exit()
+
+    def on_about(self, action, param=None):
+        self.about = Adw.AboutWindow.new()
+
+        self.about.set_application_name("Lemonade")
+        self.about.set_application_icon("ml.mdwalters.Lemonade")
+        self.about.set_version("2023.07.14")
+        self.about.set_developer_name("M.D. Walters")
+        self.about.set_issue_url("https://github.com/mdwalters/lemonade/issues/new")
+        self.about.set_website("https://github.com/mdwalters/lemonade")
+        self.about.set_license_type(Gtk.License.MIT_X11)
+        self.about.set_comments("Follow discussions on Lemmy")
+        self.about.set_release_notes("""<ul>
+            <li>Fix icons not loading</li>
+            <li>Use <code>Adw.Clamp</code> instead of <code>Gtk.Box</code></li>
+            <li>Add download success message to logs</li>
+            <li>Added about window!</li>
+        </ul>""")
+
+        self.about.show()
 
 class Lemonade(Adw.Application):
     def __init__(self, **kwargs):
