@@ -15,6 +15,8 @@ class LemonadeWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        os.mkdir(os.path.join(f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}", "cache"))
+
         stack = Gtk.Stack()
         stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
         stack.set_transition_duration(1000)
@@ -59,12 +61,14 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         self.set_child(self.sw)
 
         self.listbox = Gtk.ListBox.new()
+        self.clamp = Adw.Clamp.new()
         self.listbox.get_style_context().add_class("boxed-list")
+        self.clamp.set_child(self.listbox)
         self.listbox.props.hexpand = True
         self.listbox.props.vexpand = True
         self.listbox.set_selection_mode(Gtk.SelectionMode.NONE)
         self.listbox.set_show_separators(True)
-        self.box.append(self.listbox)
+        self.box.append(self.clamp)
 
         self.refresh()
 
@@ -89,6 +93,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
                     name = community["community"]["icon"].split("/")[-1]
                     urllib.request.urlretrieve(community["community"]["icon"], f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}/cache/{name}")
                     avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path(f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}/cache/{name}")))
+                    print(f"Successfully downloaded icon for {community['community']['title']}")
                 except:
                     print(f"Error getting icon for {community['community']['title']}")
                     pass
