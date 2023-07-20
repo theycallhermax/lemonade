@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="https://github.com/mdwalters/lemonade/raw/main/data/icons/hicolor/scalable/apps/ml.mdwalters.Lemonade.svg" alt="The Lemonade logo">
-  <h1>Lemonade</h1>
-  Follow discussions on Lemmy
+    <img src="https://github.com/mdwalters/lemonade/raw/main/data/icons/hicolor/scalable/apps/ml.mdwalters.Lemonade.svg" alt="The Lemonade logo">
+    <h1>Lemonade</h1>
+    Follow discussions on Lemmy and kbin
 </div>
 
 ## About
