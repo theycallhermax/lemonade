@@ -164,17 +164,15 @@ class LemonadeWindow(Gtk.ApplicationWindow):
 
         self.about.set_application_name("Lemonade")
         self.about.set_application_icon("ml.mdwalters.Lemonade")
-        self.about.set_version("2023.07.14")
+        self.about.set_version("2023.09.08")
         self.about.set_developer_name("M.D. Walters")
         self.about.set_issue_url("https://github.com/mdwalters/lemonade/issues/new")
         self.about.set_website("https://github.com/mdwalters/lemonade")
         self.about.set_license_type(Gtk.License.MIT_X11)
         self.about.set_comments("Follow discussions on Lemmy")
         self.about.set_release_notes("""<ul>
-            <li>Fix icons not loading</li>
-            <li>Uses <code>Adw.Clamp</code> instead of <code>Gtk.Box</code></li>
-            <li>Add download success message to logs</li>
-            <li>Added about window!</li>
+            <li>New icon by <b>@daudix-UFO</b> on GitHub!</li>
+            <li>Update <code>requests</code> dependency</li>
         </ul>""")
 
         self.about.show()

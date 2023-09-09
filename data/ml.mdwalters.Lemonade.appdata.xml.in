@@ -5,14 +5,14 @@
     <name>Lemonade</name>
     <developer_name>M.D. Walters</developer_name>
     <project_license>MIT</project_license>
-    <metadata_license>CC0-1.0</metadata_license>
-    <summary>Follow discussions on Lemmy and kbin</summary>
+    <metadata_license>CC-BY-SA-3.0</metadata_license>
+    <summary>Follow discussions on Lemmy</summary>
     <content_rating type="oars-1.1">
         <content_attribute id="social-chat">moderate</content_attribute>
         <content_attribute id="social-info">mild</content_attribute>
     </content_rating>
 
-    <update_contact>mail@mdwalters.ml</update_contact>
+    <update_contact>mdwalters.pm@proton.me</update_contact>
     <description>
         <p>Lemonade is a sleek and modern Lemmy client that is designed to provide a seamless browsing experience for Lemmy users. Built with the latest technology, Lemonade utilizes the power of libadwaita and GTK 4 to deliver a beautiful and intuitive user interface that is both easy to use and visually appealing.</p>
         <p>With Lemonade, you can easily browse your favorite communities, discover new content, and engage with other users. The client is optimized for speed and performance, ensuring that you can quickly and efficiently navigate through Lemmy without any lag or delays.</p>
@@ -25,6 +25,14 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.09.08" date="2023-09-08">
+            <description>
+                <ul>
+                    <li>New icon by @daudix-UFO on GitHub!</li>
+                    <li>Update requests dependency</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.07.14" date="2023-07-14">
             <description>
                 <ul>
