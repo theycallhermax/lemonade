@@ -32,7 +32,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/mdwalters/lemonade.git",
-                    "tag" : "2023.07.14"
+                    "tag" : "2023.09.08"
                 }
             ]
         }
