@@ -19,3 +19,6 @@ You can install Lemonade from Flathub:
 ```bash
 flatpak install flathub ml.mdwalters.Lemonade
 ```
+## Credits
+- **[@daudix-UFO](https://github.com/daudix-UFO)** for the new app icon
+- **[@bertob](https://github.com/bertob)** for the app summary
