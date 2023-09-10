@@ -127,8 +127,8 @@ class LemonadeWindow(Gtk.ApplicationWindow):
                 try:
                     print(f"Downloading icon for {community['community']['title']}")
                     name = community["community"]["icon"].split("/")[-1]
-                    urllib.request.urlretrieve(community["community"]["icon"], f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}/cache/{name}")
-                    avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path(f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}/cache/{name}")))
+                    urllib.request.urlretrieve(community["community"]["icon"], f"{os.environ['XDG_RUNTIME_DIR']}/app/ml.mdwalters.Lemonade/cache/{name}")
+                    avatar.set_custom_image(Gdk.Texture.new_from_file(Gio.File.new_for_path(f"{os.environ['XDG_RUNTIME_DIR']}/app/ml.mdwalters.Lemonade/cache/{name}")))
                     print(f"Successfully downloaded icon for {community['community']['title']}")
                 except:
                     print(f"Error getting icon for {community['community']['title']}")
@@ -140,7 +140,11 @@ class LemonadeWindow(Gtk.ApplicationWindow):
             if not "description" in community["community"]:
                 label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big> <small>!{community["community"]["name"]}@{community["community"]["actor_id"].split("/")[2]}</small>""")
             else:
-                split = community["community"]["description"].split("\n")[0].replace("&", "&amp;").replace("<", "&what;").replace(">", "&what;")
+                split = community["community"]["description"]
+                    .split("\n")[0]
+                    .replace("&", "&amp;")
+                    .replace("<", "&what;")
+                    .replace(">", "&what;")
                 label.set_markup(f"""<big><b>{community["community"]["title"]}</b></big>  <small>!{community["community"]["name"]}@{community["community"]["actor_id"].split("/")[2]}</small>
 {split}""")
 

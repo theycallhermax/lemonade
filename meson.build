@@ -7,8 +7,6 @@ project('lemonade',
 i18n = import('i18n')
 gnome = import('gnome')
 
-
-
 subdir('data')
 subdir('src')
 subdir('po')
