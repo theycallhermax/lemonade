@@ -21,6 +21,12 @@ class LemonadeWindow(Gtk.ApplicationWindow):
                     <menu id="app-menu">
                         <section>
                             <item>
+                                <attribute name="action">win.login</attribute>
+                                <attribute name="label" translatable="yes">_Log in</attribute>
+                            </item>
+                        </section>
+                        <section>
+                            <item>
                                 <attribute name="action">win.about</attribute>
                                 <attribute name="label" translatable="yes">_About</attribute>
                             </item>
@@ -35,7 +41,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         """
 
         try:
-            os.mkdir(os.path.join(f"{os.environ['XDG_RUNTIME_DIR']}/app/{os.environ['FLATPAK_ID']}", "cache"))
+            os.mkdir(os.path.join(f"{os.environ['XDG_RUNTIME_DIR']}/app/ml.mdwalters.Lemonade", "cache"))
         except FileExistsError as e:
             print(e)
 
@@ -44,6 +50,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         stack.set_transition_duration(1000)
 
         self.headerbar = Adw.HeaderBar.new()
+        self.headerbar.get_style_context().add_class("flat")
         self.set_titlebar(self.headerbar)
 
         home_button = Gtk.Button()
@@ -69,6 +76,10 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         about_action = Gio.SimpleAction.new("about", None) # look at MENU_XML win.about
         about_action.connect("activate", self.on_about)
         self.add_action(about_action) # (self window) == win in MENU_XML
+
+        login_action = Gio.SimpleAction.new("login", None) # look at MENU_XML win.about
+        login_action.connect("activate", self.on_login)
+        self.add_action(login_action) # (self window) == win in MENU_XML
 
         self.menu_button = Gtk.MenuButton.new()
         self.headerbar.pack_end(self.menu_button) # or pack_start
@@ -176,6 +187,12 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         </ul>""")
 
         self.about.show()
+
+    def on_login(self, action, param=None):
+        status = Adw.StatusPage().new()
+        status.set_icon_name("arrow-into-box-symbolic")
+        status.set_title("Log in")
+        status.show()
 
 class Lemonade(Adw.Application):
     def __init__(self, **kwargs):
