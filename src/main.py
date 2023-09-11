@@ -177,12 +177,17 @@ class LemonadeWindow(Gtk.ApplicationWindow):
         self.about.set_application_icon("ml.mdwalters.Lemonade")
         self.about.set_version("2023.09.08")
         self.about.set_developer_name("M.D. Walters")
+        self.about.set_debug_info(f"""Lemonade version: {self.about.get_version()}
+libadwaita version: {Adw.get_major_version()}.{Adw.get_minor_version()}.{Adw.get_micro_version()}
+GTK version: {Gtk.get_major_version()}.{Gtk.get_minor_version()}.{Gtk.get_micro_version()}""")
+        self.about.set_developers(["M.D. Walters https://github.com/mdwalters"])
+        self.about.set_artists(["daudix-UFO https://github.com/daudix-UFO"])
         self.about.set_issue_url("https://github.com/mdwalters/lemonade/issues/new")
         self.about.set_website("https://github.com/mdwalters/lemonade")
         self.about.set_license_type(Gtk.License.MIT_X11)
         self.about.set_comments("Follow discussions on Lemmy")
         self.about.set_release_notes("""<ul>
-            <li>New icon by <b>@daudix-UFO</b> on GitHub!</li>
+            <li>New icon by daudix-UFO on GitHub!</li>
             <li>Update <code>requests</code> dependency</li>
         </ul>""")
 
