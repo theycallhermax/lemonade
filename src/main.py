@@ -122,6 +122,9 @@ class LemonadeWindow(Gtk.ApplicationWindow):
     def refresh(self, *args):
         self.communities = requests.get("https://lemmy.ml/api/v3/community/list?sort=Hot").json()
         for community in self.communities["communities"]:
+            def open_community(self, *args):
+                print(f"Community {community['community']['id']} clicked")
+
             box = Gtk.Box(
                 orientation=Gtk.Orientation.HORIZONTAL,
                 margin_top = 20,
@@ -129,7 +132,14 @@ class LemonadeWindow(Gtk.ApplicationWindow):
                 margin_start = 20,
                 margin_end = 20
             )
-            self.listbox.append(box)
+
+            button = Gtk.Button.new()
+            button.set_child(box)
+            button.get_style_context().add_class("flat")
+            button.set_has_frame(False)
+            button.connect("clicked", open_community)
+
+            self.listbox.append(button)
 
             label = Gtk.Label.new()
             avatar = Adw.Avatar.new(40, community["community"]["title"], True)
