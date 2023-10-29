@@ -3,9 +3,9 @@
     <id>ml.mdwalters.Lemonade</id>
     <launchable type="desktop-id">ml.mdwalters.Lemonade.desktop</launchable>
     <name>Lemonade</name>
-    <developer_name>M.D. Walters</developer_name>
+    <developer_name>Max Walters</developer_name>
     <project_license>MIT</project_license>
-    <metadata_license>CC-BY-SA-3.0</metadata_license>
+    <metadata_license>CC-BY-SA-4.0</metadata_license>
     <summary>Follow discussions on Lemmy</summary>
     <content_rating type="oars-1.1">
         <content_attribute id="social-chat">moderate</content_attribute>
@@ -25,6 +25,13 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2023.10.29" date="2023-10-29">
+            <description>
+                <ul>
+                    <li>Update requests dependency to 3.1.1</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.09.08" date="2023-09-08">
             <description>
                 <ul>
