@@ -194,7 +194,7 @@ GTK version: {Gtk.get_major_version()}.{Gtk.get_minor_version()}.{Gtk.get_micro_
             "Max Walters https://mdwalters.codeberg.page/"
         ])
         self.about.set_artists([
-            "daudix-UFO https://daudix.exozy.me/"
+            "David Lapshin https://daudix.exozy.me/"
         ])
         self.about.set_issue_url("https://github.com/mdwalters/lemonade/issues/new")
         self.about.set_website("https://github.com/mdwalters/lemonade")
