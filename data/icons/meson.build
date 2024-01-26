@@ -2,7 +2,7 @@ application_id = 'ml.mdwalters.Lemonade'
 
 scalable_dir = join_paths('hicolor', 'scalable', 'apps')
 install_data(
-  join_paths(scalable_dir, ('@0@.svg').format(application_id)),
+  join_paths(scalable_dir, ('@0@.Devel.svg').format(application_id)),
   install_dir: join_paths(get_option('datadir'), 'icons', scalable_dir)
 )
 
