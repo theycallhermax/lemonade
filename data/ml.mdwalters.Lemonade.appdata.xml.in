@@ -4,7 +4,7 @@
     <launchable type="desktop-id">ml.mdwalters.Lemonade.desktop</launchable>
     <name>Lemonade</name>
     <developer_name>Max Walters</developer_name>
-    <project_license>MIT</project_license>
+    <project_license>GPL-3.0-or-later</project_license>
     <metadata_license>CC-BY-SA-4.0</metadata_license>
     <summary>Follow discussions on Lemmy</summary>
     <content_rating type="oars-1.1">
