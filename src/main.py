@@ -198,7 +198,7 @@ GTK version: {Gtk.get_major_version()}.{Gtk.get_minor_version()}.{Gtk.get_micro_
         ])
         self.about.set_issue_url("https://github.com/mdwalters/lemonade/issues/new")
         self.about.set_website("https://github.com/mdwalters/lemonade")
-        self.about.set_license_type(Gtk.License.MIT_X11)
+        self.about.set_license_type(Gtk.License.GPL_3_0)
         self.about.set_comments("Follow discussions on Lemmy")
         self.about.set_release_notes("""<ul>
             <li>Update <code>requests</code> dependency to <code>3.1.1</code></li>
