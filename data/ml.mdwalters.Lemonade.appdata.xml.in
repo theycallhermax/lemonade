@@ -17,14 +17,21 @@
         <p>Lemonade is a sleek and modern Lemmy client that is designed to provide a seamless browsing experience for Lemmy users. Built with the latest technology, Lemonade utilizes the power of libadwaita and GTK 4 to deliver a beautiful and intuitive user interface that is both easy to use and visually appealing.</p>
         <p>With Lemonade, you can easily browse your favorite communities, discover new content, and engage with other users. The client is optimized for speed and performance, ensuring that you can quickly and efficiently navigate through Lemmy without any lag or delays.</p>
     </description>
-    <url type="homepage">https://github.com/mdwalters/lemonade</url>
-    <url type="bugtracker">https://github.com/mdwalters/lemonade/issues</url>
+    <url type="homepage">https://github.com/theycallhermax/lemonade</url>
+    <url type="bugtracker">https://github.com/theycallhermax/lemonade/issues</url>
     <screenshots>
         <screenshot type="default">
             <image type="source">https://i.ibb.co/0jf8RR4/image.png</image>
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2024.03.20" date="2024-03-20">
+            <description>
+                <ul>
+                    <li>Bump internal libraries</li>
+                </ul>
+            </description>
+        </release>
         <release version="2023.10.29" date="2023-10-29">
             <description>
                 <ul>
