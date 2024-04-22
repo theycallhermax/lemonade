@@ -2,7 +2,6 @@
 <component type="desktop">
     <id>ml.mdwalters.Lemonade</id>
     <launchable type="desktop-id">ml.mdwalters.Lemonade.desktop</launchable>
-    <icon type="stock">ml.mdwalters.Lemonade</icon>
     <name>Lemonade</name>
     <developer_name>Max Walters</developer_name>
     <project_license>GPL-3.0-or-later</project_license>
