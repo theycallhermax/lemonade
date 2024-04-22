@@ -25,6 +25,13 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="2024.04.22" date="2024-04-22">
+            <description>
+                <ul>
+                    <li>Fix internal information</li>
+                </ul>
+            </description>
+        </release>
         <release version="2024.03.20" date="2024-03-20">
             <description>
                 <ul>
