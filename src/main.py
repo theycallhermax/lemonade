@@ -191,13 +191,13 @@ class LemonadeWindow(Gtk.ApplicationWindow):
 libadwaita version: {Adw.get_major_version()}.{Adw.get_minor_version()}.{Adw.get_micro_version()}
 GTK version: {Gtk.get_major_version()}.{Gtk.get_minor_version()}.{Gtk.get_micro_version()}""")
         self.about.set_developers([
-            "Max Walters https://mdwalters.codeberg.page/"
+            "Max Walters https://max.is-probably.gay/"
         ])
         self.about.set_artists([
             "David Lapshin https://daudix.exozy.me/"
         ])
-        self.about.set_issue_url("https://github.com/mdwalters/lemonade/issues/new")
-        self.about.set_website("https://github.com/mdwalters/lemonade")
+        self.about.set_issue_url("https://github.com/theycallhermax/lemonade/issues/new")
+        self.about.set_website("https://github.com/theycallhermax/lemonade")
         self.about.set_license_type(Gtk.License.GPL_3_0)
         self.about.set_comments("Follow discussions on Lemmy")
         self.about.set_release_notes("""<ul>
