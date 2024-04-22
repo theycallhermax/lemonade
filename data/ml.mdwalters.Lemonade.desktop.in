@@ -5,7 +5,7 @@ Exec=lemonade
 Icon=ml.mdwalters.Lemonade
 Terminal=false
 Type=Application
-Categories=GTK;GNOME;Network;Chat
+Categories=Network;Chat
 StartupNotify=true
 # Translators: Do NOT translate or transliterate this text (these are enum types)!
 X-Purism-FormFactor=Workstation;Mobile;
