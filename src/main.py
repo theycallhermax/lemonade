@@ -185,7 +185,7 @@ class LemonadeWindow(Gtk.ApplicationWindow):
 
         self.about.set_application_name("Lemonade")
         self.about.set_application_icon("ml.mdwalters.Lemonade")
-        self.about.set_version("2023.10.29")
+        self.about.set_version("2024.04.22")
         self.about.set_developer_name("Max Walters")
         self.about.set_debug_info(f"""Lemonade version: {self.about.get_version()}
 libadwaita version: {Adw.get_major_version()}.{Adw.get_minor_version()}.{Adw.get_micro_version()}
@@ -201,7 +201,7 @@ GTK version: {Gtk.get_major_version()}.{Gtk.get_minor_version()}.{Gtk.get_micro_
         self.about.set_license_type(Gtk.License.GPL_3_0)
         self.about.set_comments("Follow discussions on Lemmy")
         self.about.set_release_notes("""<ul>
-            <li>Update <code>requests</code> dependency to <code>3.1.1</code></li>
+            <li>Fix internal information</li>
         </ul>""")
 
         self.about.show()
