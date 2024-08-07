@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+		"bodil.blueprint-gtk",
+		"rust-lang.rust-analyzer",
+		"tamasfe.even-better-toml",
+		"mesonbuild.mesonbuild"
+	]
+}

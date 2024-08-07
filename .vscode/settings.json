@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"Justfile": "makefile",
+		"*.desktop.in": "toml",
+		"*.xml.in": "xml",
+		"*.rs.in": "rust"
+	},
+}

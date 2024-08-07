@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>ht.sr.git.shrimple.Ouch</id>
+	<icon type="stock">ht.sr.git.shrimple.Ouch</icon>
+	<launchable type="desktop-id">ht.sr.git.shrimple.Ouch.desktop</launchable>
+	<name>Ouch Browser</name>
+	<developer_name>Shrimple Technologies</developer_name>
+	<project_license>GPL-3.0-or-later</project_license>
+	<metadata_license>CC-BY-SA-4.0</metadata_license>
+	<summary>Focus on your browsing</summary>
+	<branding>
+		<color type="primary" scheme_preference="light">#cdab8f</color>
+		<color type="primary" scheme_preference="dark">#865e3c</color>
+	</branding>
+	<content_rating type="oars-1.1">
+		<content_attribute id="social-chat">intense</content_attribute>
+		<content_attribute id="social-info">intense</content_attribute>
+		<content_attribute id="social-audio">intense</content_attribute>
+		<content_attribute id="social-contacts">intense</content_attribute>
+	</content_rating>
+	<supports>
+		<control>pointing</control>
+		<control>keyboard</control>
+		<control>touch</control>
+	</supports>
+	<update_contact>mdwalters.pm@proton.me</update_contact>
+	<description>
+		<p>Ouch Browser isn't just another web browser, it's a whole new look on the web.</p>
+	</description>
+	<url type="homepage">https://sr.ht/~shrimple/ouch</url>
+	<url type="bugtracker">https://todo.sr.ht/~shrimple/ouch</url>
+	<url type="vcs-browser">https://git.sr.ht/~shrimple/ouch</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Sidebar%20Opened.png</image>
+			<caption>Ouch Browser's default layout.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Sidebar%20Closed.png</image>
+			<caption>Ouch Browser's default layout with the sidebar closed.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Command%20Palette%20Opened.png</image>
+			<caption>Ouch Browser's default layout with the command palette opened.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Sidebar%20Closed.png</image>
+			<caption>Ouch Browser's mobile layout.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Sidebar%20Opened.png</image>
+			<caption>Ouch Browser's mobile layout with the sidebar opened.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Command%20Palette%20Opened.png</image>
+			<caption>Ouch Browser's mobile layout with the command palette opened.</caption>
+		</screenshot>
+	</screenshots>
+	<releases>
+		<release version="0.3.2" date="2024-08-04">
+			<description>
+				<ul>
+					<li>Fixes multiple bugs</li>
+				</ul>
+			</description>
+		</release>
+		<release version="0.3.1" date="2024-08-04">
+			<description>
+				<ul>
+					<li>Fixes multiple bugs</li>
+				</ul>
+			</description>
+		</release>
+		<release version="0.3.0" date="2024-08-04">
+			<description>
+				<ul>
+					<li>Implement settings (INCOMPLETE)</li>
+					<li>Make command palette toggle change on each website</li>
+				</ul>
+			</description>
+		</release>
+		<release version="0.2.0" date="2024-08-02">
+			<description>
+				<ul>
+					<li>Implement command palette</li>
+					<li>Change default light mode and dark mode colours</li>
+					<li>Remove start page in favour of the command palette</li>
+					<li>Add keyboard shortcuts</li>
+					<li>Add better mobile support</li>
+					<li>Add about window</li>
+				</ul>
+			</description>
+		</release>
+		<release version="0.1.0" date="2024-07-10">
+			<description>
+				<ul>
+					<li>Initial release!</li>
+				</ul>
+			</description>
+		</release>
+	</releases>
+</component>

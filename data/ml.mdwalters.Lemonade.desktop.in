@@ -6,6 +6,5 @@ Icon=ml.mdwalters.Lemonade
 Terminal=false
 Type=Application
 Categories=Network;Chat
-StartupNotify=true
-# Translators: Do NOT translate or transliterate this text (these are enum types)!
 X-Purism-FormFactor=Workstation;Mobile;
+StartupNotify=true

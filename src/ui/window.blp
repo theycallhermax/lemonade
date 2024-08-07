@@ -1,0 +1,122 @@
+using Gtk 4.0;
+using Adw 1;
+using WebKit 6.0;
+
+Adw.ApplicationWindow window {
+	title: "Lemonade";
+	default-width: 700;
+	default-height: 500;
+
+	Adw.Breakpoint {
+        condition ("max-width: 600sp")
+        setters {
+			nsv.collapsed: true;
+		}
+    }
+
+
+	Adw.NavigationSplitView nsv {
+		sidebar: Adw.NavigationPage {
+			title: "Lemonade";
+
+			Adw.ToolbarView {
+				[top]
+				Adw.HeaderBar {
+					[start]
+					Adw.Avatar {
+						text: "sudomania";
+						show-initials: true;
+						size: 20;
+					}
+				}
+
+				ScrolledWindow {
+					ListBox {
+						Adw.ActionRow {
+							[prefix]
+							Image { icon-name: "go-home-symbolic"; }
+
+							title: "Home";
+						}
+
+						Adw.ActionRow {
+							[prefix]
+							Image { icon-name: "org.gnome.Settings-notifications-symbolic"; }
+
+							title: "Notifications";
+						}
+
+						Adw.ActionRow {
+							[prefix]
+							Image { icon-name: "system-search-symbolic"; }
+
+							title: "Search";
+						}
+
+						Adw.ActionRow {
+							[prefix]
+							Image { icon-name: "network-server-symbolic"; }
+
+							title: "Local";
+						}
+
+						styles [
+							"navigation-sidebar",
+						]
+					}
+				}
+			}
+		};
+		content: Adw.NavigationPage {
+			title: "Lemonade";
+
+			Adw.ToolbarView {
+				[top]
+				Adw.HeaderBar { show-title: false; }
+
+				ScrolledWindow {
+					Adw.Clamp {
+						Box {
+							orientation: vertical;
+							spacing: 10;
+
+							Box {
+							Box {
+								orientation: vertical;
+								margin-top: 10;
+								margin-bottom: 10;
+								margin-start: 10;
+								margin-end: 10;
+
+								Box {
+									orientation: horizontal;
+									spacing: 10;
+
+									Adw.Avatar {
+										text: "Lemmy";
+										show-initials: true;
+										size: 30;
+									}
+
+									Label {
+										label: "Lemmy";
+										styles [ "heading" ]
+									}
+								}
+								}
+
+								styles [ "card" ]
+							}
+						}
+					}
+				}
+			}
+		};
+	}
+}
+
+menu menu {
+	item (_("Settings"), "win.show-preferences")
+	item (_("Keyboard Shortcuts"), "win.show-help-overlay")
+	item (_("About Lemonade"), "win.about")
+}
